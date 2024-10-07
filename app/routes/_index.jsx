@@ -1,4 +1,5 @@
 import { useLoaderData, json } from "@remix-run/react";
+import Serve from "../data/serve";
 
 export const meta = () => {
   return [
@@ -7,15 +8,12 @@ export const meta = () => {
   ];
 };
 
-export async function loader() {
-  const url = await fetch(`${process.env.PATH_API}getrandomsentence`);
-  return json(await url.json());
-}
 
 export default function Index() {
-  const data = useLoaderData();
-  console.log(data.Text);
-  return <div style={{textAlign:"center", fontSize:"20px",marginTop:"20px"}}>{data.Text}</div>;
-}
 
+  const data = Serve();
+  console.log(data);
+  
+  return <div style={{textAlign:"center", fontSize:"20px",marginTop:"20px"}}>{data.text}</div>;
+}
 
