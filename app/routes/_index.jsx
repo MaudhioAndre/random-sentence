@@ -14,6 +14,6 @@ export default function Index() {
   const data = Serve();
   console.log(data);
   
-  return <div style={{textAlign:"center", fontSize:"20px",marginTop:"20px"}}>{data.text}</div>;
+  return <div style={{textAlign:"center", fontSize:"25px", margin:"80px", marginTop:"40px"}}>{data.text}</div>;
 }
 
